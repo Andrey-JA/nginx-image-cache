@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+    - ./templates/nginx.conf:/etc/nginx/nginx.conf
+    - ./var/www:/www
+    ports:
+    - "8060:80"
+    environment:
+    - NGINX_HOST=foobar.com
+    - NGINX_PORT=80
